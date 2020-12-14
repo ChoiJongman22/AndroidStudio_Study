@@ -19,7 +19,7 @@ class harryPotterMain : AppCompatActivity() {
         setContentView(R.layout.activity_harry_potter_main)
 
         character.setOnClickListener {
-            val intent = Intent(this@harryPotterMain,HarryPotterChar::class.java)
+            val intent = Intent(this@harryPotterMain,HarryRecyclerViewActivity::class.java)
             startActivity(intent)
         }
 
