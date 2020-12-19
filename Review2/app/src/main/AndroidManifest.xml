@@ -11,21 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Review2">
-        <activity android:name=".PhoneBookRecyclerView"></activity>
-        <activity android:name=".RecycleView">
+        <activity android:name=".TabPager2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListView"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".TabPagerActivity" />
+        <activity android:name=".PhoneBookRecyclerView" />
+        <activity android:name=".PhoneBookDetailAcitivty" />
+        <activity android:name=".PhoneBookActivity" />
+        <activity android:name=".RecycleView" />
+        <activity android:name=".ListView" />
         <activity android:name=".AddView" />
         <activity android:name=".LibraryUsing" />
         <activity android:name=".Context" />
         <activity android:name=".Resource" />
-        <activity android:name=".FragActivity1" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".FragActivity1">
+
+        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

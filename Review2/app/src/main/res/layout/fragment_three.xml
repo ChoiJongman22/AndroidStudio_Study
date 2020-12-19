@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F30B0B">
+    android:background="#0B23FF">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pass"
-        android:text="pass1"/>
+        android:id="@+id/pass3"
+        android:text="pass22"/>
 
 </LinearLayout>
