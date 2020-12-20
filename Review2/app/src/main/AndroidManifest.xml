@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Review2">
+        <activity android:name=".MainActivity3"></activity>
         <activity android:name=".TabPager2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +30,8 @@
         <activity android:name=".LibraryUsing" />
         <activity android:name=".Context" />
         <activity android:name=".Resource" />
-        <activity android:name=".FragActivity1">
-
-        </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".FragActivity1"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
