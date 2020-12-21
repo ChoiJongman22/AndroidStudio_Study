@@ -2,26 +2,21 @@ package com.example.countingapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main2.*
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        var new = "0"
-        var old = "0"
-
-
+        setContentView(R.layout.activity_main2)
+        var new="0"
+        var old="0"
         btn1.setOnClickListener {
-            new += "1"
-            result.text = new
+            new +="1"
+            result.text=new
         }
         btn2.setOnClickListener {
-            new += "2"
-            result.text = new
+            new +="2"
+            result.text=new
         }
         btn3.setOnClickListener {
             new += "3"
@@ -55,32 +50,15 @@ class MainActivity : AppCompatActivity() {
             new += "0"
             result.text = new
         }
-
         btnP.setOnClickListener {
-            old= (old.toInt() + new.toInt()).toString()
+            old=(old.toInt()+new.toInt()).toString()
             new="0"
             result.text=old
         }
-
-
-        btnS.setOnClickListener {
-            old= (old.toInt() - new.toInt()).toString()
-            new="0"
-            result.text=old
-        }
-
-        btnM.setOnClickListener {
-            old= (old.toInt() * new.toInt()).toString()
-            new="0"
-            result.text=old
-        }
-
-        btnC.setOnClickListener {
+        btnC.setOnClickListener{
             new="0"
             old="0"
             result.text="0"
         }
     }
-
 }
-

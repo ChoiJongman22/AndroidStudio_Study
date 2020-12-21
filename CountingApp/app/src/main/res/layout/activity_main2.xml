@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <TextView
         android:id="@+id/result"
@@ -17,29 +17,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
         <Button
             android:id="@+id/btn1"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.BlueRipple"
-            android:text="1" />
+            android:text="1"/>
         <Button
             android:id="@+id/btn2"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.BlueRipple"
-            android:text="2" />
+            android:text="2"/>
         <Button
             android:id="@+id/btn3"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.BlueRipple"
-            android:text="3" />
+            android:text="3"/>
         <Button
             android:id="@+id/btnD"
             android:layout_weight="1"
@@ -48,8 +47,6 @@
             android:theme="@style/AppTheme.BlueRipple"
             android:text="/"/>
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,8 +80,8 @@
             android:theme="@style/AppTheme.BlueRipple"
             android:text="*"/>
     </LinearLayout>
-
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -117,7 +114,6 @@
             android:theme="@style/AppTheme.BlueRipple"
             android:text="+"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -151,7 +147,6 @@
             android:theme="@style/AppTheme.BlueRipple"
             android:text="C" />
     </LinearLayout>
-
     <TextView
         android:layout_marginLeft="250dp"
         android:layout_width="match_parent"
@@ -164,5 +159,4 @@
         android:layout_height="wrap_content"
         android:textColor="#009CE3"
         android:text="StartUF_Innovation"/>
-
 </LinearLayout>
