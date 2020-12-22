@@ -9,16 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewBinding">
-        <activity android:name=".RealmActivity">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+
+        </activity>
+        <activity android:name=".Resource">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".FragmentActivity">
 
         </activity>
+        <activity android:name=".AsyncActivity" />
+        <activity android:name=".Intent2" />
+        <activity android:name=".Intent1" />
+        <activity android:name=".Counting" />
+        <activity android:name=".RealmActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
