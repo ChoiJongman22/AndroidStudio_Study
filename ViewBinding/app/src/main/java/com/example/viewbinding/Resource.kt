@@ -1,5 +1,6 @@
 package com.example.viewbinding
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,7 @@ class Resource : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityResourceBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val context:Context
         val ment = resources.getString(R.string.my_name)
         Log.d("mentt","ment : "+ment)
 

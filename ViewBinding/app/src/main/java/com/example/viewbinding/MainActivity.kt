@@ -13,8 +13,9 @@ class MainActivity : AppCompatActivity() {
         binding.title.text="hello"
         binding.subtitle.text="goodbye"
         binding.button.setOnClickListener {
-            Toast.makeText(this,"안녕하세요",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,R.string.hello,Toast.LENGTH_SHORT).show()
         }
+
         setContentView(binding.root)
     }
 }
