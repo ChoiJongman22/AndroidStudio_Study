@@ -22,7 +22,9 @@ class HulkActivity : AppCompatActivity() {
                 .asGif()
                 .load("https://upload2.inven.co.kr/upload/2018/10/29/bbs/i13399625744.gif")
                 .into(binding.suitup)
-
+        binding.banner.setOnClickListener{
+            onBackPressed()
+        }
 
     }
 }

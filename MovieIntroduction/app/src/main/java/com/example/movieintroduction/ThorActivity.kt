@@ -22,6 +22,8 @@ class ThorActivity : AppCompatActivity() {
                 .asGif()
                 .load("https://media.tenor.com/images/bc8ff9b0f2271982a4592c205c9084b6/tenor.gif")
                 .into(binding.suitup)
-
+        binding.thor.setOnClickListener{
+            onBackPressed()
+        }
     }
 }

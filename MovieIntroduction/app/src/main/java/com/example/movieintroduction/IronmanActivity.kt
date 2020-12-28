@@ -25,6 +25,8 @@ class IronmanActivity : AppCompatActivity() {
             .asGif()
             .load("https://thumbs.gfycat.com/EnchantingGiddyFlickertailsquirrel-max-1mb.gif")
             .into(binding.suitup)
-
+        binding.ironMan.setOnClickListener{
+            onBackPressed()
+        }
     }
 }

@@ -22,5 +22,8 @@ class WandaActivity : AppCompatActivity() {
                 .asGif()
                 .load("https://data.whicdn.com/images/333601350/original.gif")
                 .into(binding.suitup)
+        binding.wanda.setOnClickListener{
+            onBackPressed()
+        }
     }
 }

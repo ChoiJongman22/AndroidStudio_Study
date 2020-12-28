@@ -22,5 +22,8 @@ class BlackWidowActivity : AppCompatActivity() {
                 .asGif()
                 .load("https://t1.daumcdn.net/cafeattach/1D7bO/1d708917a735e54337b819ef0291a1c26d3cc057")
                 .into(binding.suitup)
+        binding.nat.setOnClickListener{
+            onBackPressed()
+        }
     }
 }
