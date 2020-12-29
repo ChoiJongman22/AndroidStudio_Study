@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -61,7 +62,6 @@ class AvengersAdapter: RecyclerView.Adapter<AvengersAdapter.MovieViewHolder>(){
 
         holder.char_Name.text=item.getName()
         holder.char_Detail.text=item.getDetail()
-
         /*if(item.getName() == "Iron Man"){
             holder.itemView.setOnClickListener{
                 val intent = Intent(holder.itemView?.context,IronmanActivity::class.java)

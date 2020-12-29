@@ -46,7 +46,7 @@
                 android:id="@+id/char_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Movie Content"
+                android:text="Character_content"
                 android:textColor="@android:color/white"/>
 
         </LinearLayout>
