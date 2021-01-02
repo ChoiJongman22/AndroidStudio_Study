@@ -36,21 +36,8 @@ class RecyclerAdapter(
         val inflater: LayoutInflater
 ):RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
     inner class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        val carName:TextView
-        val carEngine:TextView
-        init{
-
-            carName=itemView.findViewById(R.id.car_name)
-            carEngine=itemView.findViewById(R.id.car_engine)
-            itemView.setOnClickListener{
-                val position:Int = adapterPosition
-                val engineName=itemList.get(position).engine
-                Log.d("engine",engineName)
-                //inner로 선언해야 한다.
-                //RecyclerAdapter클래스 안에 itemList에 있다.
-            }
-
-        }
+        val carName:TextView = itemView.findViewById(R.id.car_name)
+        val carEngine:TextView = itemView.findViewById(R.id.car_engine)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

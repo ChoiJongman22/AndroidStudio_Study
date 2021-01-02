@@ -59,7 +59,7 @@ dependencies {
     implementation "com.google.android.material:material:1.1.0"
     implementation "com.google.code.gson:gson:2.8.5"
     implementation 'com.android.support:design:26.1.0'
-
+    implementation 'org.jetbrains.anko:anko:0.10.5'
 
     def room_version = "2.2.5"
 

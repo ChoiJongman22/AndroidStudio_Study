@@ -7,18 +7,15 @@
     <application
         android:allowBackup="true"
         android:background="?attr/selectableItemBackground"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/endgameposter"
         android:label="@string/app_name2"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/endgameposter2"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieIntroduction">
-        <activity android:name=".ActionViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".AvengersStart"></activity>
+        <activity android:name=".AntmanActivity" />
+        <activity android:name=".StrangeActivity" />
+        <activity android:name=".ActionViewActivity" />
         <activity android:name=".ThorActivity" />
         <activity android:name=".WandaActivity" />
         <activity android:name=".HulkActivity" />
@@ -29,7 +26,11 @@
         <activity
             android:name=".AppStartActivity"
             android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

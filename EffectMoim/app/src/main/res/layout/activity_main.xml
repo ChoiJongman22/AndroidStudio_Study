@@ -7,12 +7,12 @@
     android:orientation="vertical"
     android:background="#FFEF8E"
     tools:context=".MainActivity">
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/horrible"
-        android:text="horrible"
-        android:backgroundTint="@color/black"
+        android:text="@string/intro"
         android:textColor="#000000"
-        android:background="?attr/selectableItemBackgroundBorderless"/>
+        android:background="#EC4040"
+        />
 </LinearLayout>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MovieIntroduction</string>
-    <string name="app_name2">AvengersIntro</string>
+    <string name="app_name2">Avengers</string>
     <string name="ironDetail">백만장자, 플레이보이, 박애주의자, 그리고 IronMan</string>
     <string name="ironDetail2">
         세계 최고 무기 판매상. 아버지 하워드 스타크에 이어 스타크인더스트리 대표직을 맡은 이후 최고의 무기 판매상이 되었다.
@@ -60,7 +60,30 @@
         후속작에선 완다의 힘으로 스톤을 파괴할 수 있다는 것이 밝혀졌다.
         완다비전 인터뷰에서 케빈 파이기가 완다의 능력은 MCU 내에서 정확히 정의된 적이 없다고 말하며 완다비전을 통해
         완다의 과거와 능력의 비밀을 알 수 있을 것이라고 말했다.
+    </string>
 
+    <string name="Doctoratail">내가 지금 그걸 말하면 그건 발생하지 않을꺼야.</string>
+    <string name="Doctoratail2">
+        작중 마리아 힐의 대사를 통해 설명된 그녀의 능력은 신경 전류 접속, 염동력,
+        정신 조작(neural electric interfacing, telekinesis, mental manipulation).
+        이 설명을 들은 캡틴 아메리카가 뭔 소린지 이해를 못하자 힐은 그냥 이상한(weird) 여자라고 한 마디로 요약해줬다.
+        참고로 완다의 능력은 대부분 에이전트 오브 실드에서 과학적으로는 발현이 불가능한 능력이라고 못박은 설정들이다.
+        하긴 능력의 유래가 인피니티 스톤 중 하나인 마인드 스톤인 만큼 납득이 가는 것은 당연하다.
+        후속작에선 완다의 힘으로 스톤을 파괴할 수 있다는 것이 밝혀졌다.
+        완다비전 인터뷰에서 케빈 파이기가 완다의 능력은 MCU 내에서 정확히 정의된 적이 없다고 말하며 완다비전을 통해
+        완다의 과거와 능력의 비밀을 알 수 있을 것이라고 말했다.
+    </string>
+
+    <string name="Antmandetail">타임머신이 아니라.. 맞아요 타임머신.</string>
+    <string name="Antmandetail2">
+        작중 마리아 힐의 대사를 통해 설명된 그녀의 능력은 신경 전류 접속, 염동력,
+        정신 조작(neural electric interfacing, telekinesis, mental manipulation).
+        이 설명을 들은 캡틴 아메리카가 뭔 소린지 이해를 못하자 힐은 그냥 이상한(weird) 여자라고 한 마디로 요약해줬다.
+        참고로 완다의 능력은 대부분 에이전트 오브 실드에서 과학적으로는 발현이 불가능한 능력이라고 못박은 설정들이다.
+        하긴 능력의 유래가 인피니티 스톤 중 하나인 마인드 스톤인 만큼 납득이 가는 것은 당연하다.
+        후속작에선 완다의 힘으로 스톤을 파괴할 수 있다는 것이 밝혀졌다.
+        완다비전 인터뷰에서 케빈 파이기가 완다의 능력은 MCU 내에서 정확히 정의된 적이 없다고 말하며 완다비전을 통해
+        완다의 과거와 능력의 비밀을 알 수 있을 것이라고 말했다.
     </string>
 
 </resources>

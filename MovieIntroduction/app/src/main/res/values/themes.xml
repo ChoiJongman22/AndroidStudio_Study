@@ -3,7 +3,7 @@
     <style name="Theme.MovieIntroduction" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">#93FFA5</item>
+        <item name="colorPrimaryVariant">#CE78F3</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -17,6 +17,7 @@
 
         <!-- color highlight -->
         <item name="colorControlHighlight">#fd4381</item>
+
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/endgameposter</item>

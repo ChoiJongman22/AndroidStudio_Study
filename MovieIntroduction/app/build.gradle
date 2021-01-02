@@ -60,7 +60,7 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.5"
     implementation 'com.android.support:design:26.1.0'
 
-
+    implementation 'com.github.Brooks0129:ThanosSnap:v1.0'
     def room_version = "2.2.5"
 
     implementation "androidx.room:room-runtime:$room_version"
