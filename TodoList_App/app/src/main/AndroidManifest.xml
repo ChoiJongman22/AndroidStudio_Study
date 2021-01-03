@@ -14,17 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TodoList_App">
-        <activity android:name=".MainActivity3">
+        <activity android:name=".Todolist2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2">
 
-        </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity3"></activity>
+        <activity android:name=".MainActivity2" />
+
     </application>
 
 </manifest>

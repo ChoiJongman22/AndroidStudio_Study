@@ -6,12 +6,14 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.review2.databinding.ActivitySharedPreferenceBinding
 import kotlinx.android.synthetic.main.activity_shared_preference.*
 
 class SharedPreference : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shared_preference)
+        val binding = ActivitySharedPreferenceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //SharedPreference에 저장하는 방법
 
@@ -32,7 +34,7 @@ class SharedPreference : AppCompatActivity() {
 
         //저장하는 버튼
 
-        button13.setOnClickListener {
+        binding.button13.setOnClickListener {
             val sharedPreference= getSharedPreferences("sp1", MODE_PRIVATE)
             val editor:SharedPreferences.Editor=sharedPreference.edit()
             editor.putString("hello","안녕하세요")
@@ -42,7 +44,7 @@ class SharedPreference : AppCompatActivity() {
 
 
         //불러오는 버튼
-        button12.setOnClickListener {
+        binding.button12.setOnClickListener {
             //sharedPreference에서 불러오는 방법
             val sharedPreference=getSharedPreferences("sp1", MODE_PRIVATE)
             val value1 = sharedPreference.getString("hello","데이터 없음1")
@@ -53,14 +55,14 @@ class SharedPreference : AppCompatActivity() {
 
 
         //삭제하는 버튼
-        button14.setOnClickListener {
+        binding.button14.setOnClickListener {
             val sharedPreference=getSharedPreferences("sp1", MODE_PRIVATE)
             val editor=sharedPreference.edit()
             editor.remove("hello")
             editor.commit()
 
         }
-        button15.setOnClickListener {
+        binding.button15.setOnClickListener {
             val sharedPreference=getSharedPreferences("sp1", MODE_PRIVATE)
             val editor=sharedPreference.edit()
             editor.clear()

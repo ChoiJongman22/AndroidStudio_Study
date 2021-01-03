@@ -6,26 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
+import com.example.review2.databinding.ActivityTabPager2Binding
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tab_pager.*
 
 class TabPager2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tab_pager)
+        val binding = ActivityTabPager2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        tab_layout.addTab(tab_layout.newTab().setText("ONE"))
-        tab_layout.addTab(tab_layout.newTab().setText("TWO"))
-        tab_layout.addTab(tab_layout.newTab().setText("THREE"))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("ONE"))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("TWO"))
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("THREE"))
 
         val adapter=ThreePageAdapter(LayoutInflater.from(this@TabPager2Activity))
-        view_pager.adapter=adapter
-        view_pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+        binding.viewPager.adapter=adapter
+        binding.viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(binding.tabLayout))
 
 
-        tab_layout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+        binding.tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                view_pager.currentItem=tab!!.position
+                binding.viewPager.currentItem=tab!!.position
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {

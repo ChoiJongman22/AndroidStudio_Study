@@ -3,6 +3,7 @@ package com.example.review2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.review2.databinding.ActivityRealmBinding
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import kotlinx.android.synthetic.main.activity_realm.*
@@ -10,7 +11,8 @@ import kotlinx.android.synthetic.main.activity_realm.*
 class RealmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_realm)
+        val binding = ActivityRealmBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         Realm.init(this@RealmActivity)
         val config:RealmConfiguration=RealmConfiguration.Builder()
@@ -23,7 +25,7 @@ class RealmActivity : AppCompatActivity() {
         Realm.setDefaultConfiguration(config)
         val realm = Realm.getDefaultInstance()
 
-        save.setOnClickListener {
+        binding.save.setOnClickListener {
             realm.executeTransaction{
                 //A테이블에서 데이터를 가져온다.
                 //B테이블에서 데이터를 가져온다.
@@ -39,23 +41,19 @@ class RealmActivity : AppCompatActivity() {
 
             }
         }
-        load.setOnClickListener {
+        binding.load.setOnClickListener {
                 realm.executeTransaction{
                     val data= it.where(School::class.java).findFirst()
                     Log.d("dataa","data: " +data)
                 }
 
         }
-        delete.setOnClickListener {
+        binding.delete.setOnClickListener {
             realm.executeTransaction{
                 it.where(School::class.java).findAll().deleteAllFromRealm() //전부다 지움
                 //it.where(School::class.java).findFirst().deleteFromRealm()//첫번째꺼 하나만 지움
             }
 
         }
-
-
-
-
     }
 }

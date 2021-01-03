@@ -8,19 +8,108 @@ class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+        val night=Night(20,4)
+        val monster=Monster(15,3)
+        night.attack(monster)
+        monster.attack(night)
 
+    }
+}
+
+
+class Night(private var hp: Int, private var power: Int) {
+    fun attack(monster: Monster) {
+        monster.defend(power)
+    }
+
+    fun defend(damage:Int) {
+        hp -= damage
+        if (hp > 0) {
+            heal()
+            Log.d("기사", "기사 현재 체력은 " + hp + "입니다.")
+        } else {
+            Log.d("기사", "기사는 죽었습니다.")
+        }
+    }
+
+    private fun heal() {
+        hp += 3
+    }
+}
+
+class Monster(private var hp: Int, private var power: Int) {
+    fun attack(night:Night) {
+        night.defend(power)
+    }
+
+    fun defend(damage: Int) {
+        hp -= damage
+        if (hp > 0) {
+            Log.d("몬스터", "몬스터 현재 체력은" + hp + "입니다.")
+        } else {
+            Log.d("몬스터", "몬스터는 죽었습니다.")
+        }
+
+    }
+}
+
+
+class TestAccess {
+    var name: String = "홍길동"
+
+    constructor(Name: String) {
+        this.name = Name
+    }
+
+    fun Test() {
+        Log.d("테스트", "테스트이야기")
     }
 
 }
 
-
 class TV(val channels: List<String>) {
     var onOroff: Boolean = false //True : On False : Off
+    var currentChannelNumber = 0
+        set(value) {
+            //이 함수는 S채널 다음에 K채널로 오게하는 중요한 함수. field를 사용한다는 점 확인할 것.
+            field = value
+            if (field > 2) {
+                field = 0
+            }
+            if (field < 0) {
+                field = 2
+            }
+        }
+        get() {
+            println("TV호출되었습니다.")
+            return field
+        }
 
-    fun switch(){
+    fun switch() {
         onOroff = !onOroff
     }
 
+    fun channelUp() {
+        channels.forEachIndexed { index, value ->
+            if (currentChannelNumber == index) {
+                currentChannelNumber += 1
+                return
+            }
+        }
+    }
+
+    fun channelDown() {
+        channels.forEachIndexed { index, value ->
+            if (currentChannelNumber == index) {
+                currentChannelNumber -= 1
+                return
+            }
+        }
+    }
+
+    fun checkCurrentChannel(): String {
+        return channels[currentChannelNumber]
+    }
 }
 
 
