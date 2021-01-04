@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFF455"
     tools:context=".TodoList_version2">
 
     <TextView
@@ -24,37 +25,71 @@
         android:textColor="@color/black"
         android:padding="20dp"
         android:hint="Add an Item"
+        android:drawableRight="@drawable/ic_baseline_cancel_24"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/status_bar"
         android:orientation="horizontal"
         android:padding="10dp"
-        android:background="@color/purple_200">
+        android:background="#E19090">
         <Button
+            android:layout_weight="1"
             android:id="@+id/add"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="Add"
-            android:layout_marginLeft="60dp"/>
+            android:text="Add"
+            android:textSize="15dp"
+            android:outlineProvider="paddedBounds"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            />
         <Button
+            android:layout_weight="1"
             android:id="@+id/delete"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="Delete"
-            android:layout_marginLeft="60dp"/>
+            android:text="Delete"
+            android:textSize="15dp"
+            android:outlineProvider="paddedBounds"
+            android:background="?attr/selectableItemBackgroundBorderless" />
 
         <Button
+            android:layout_weight="1"
             android:id="@+id/clear"
-            android:layout_width="wrap_content"
+            android:outlineProvider="paddedBounds"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_height="wrap_content"
-            android:textColor="Clear"
-            android:layout_marginLeft="60dp"/>
-
-
-
+            android:text="Clear"
+            />
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mytodo"
+        android:textStyle="bold"
+        android:textColor="#0023FF"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:background="@drawable/gradientbackground2"
+        android:text="My-To-Do-List"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 
 </LinearLayout>
