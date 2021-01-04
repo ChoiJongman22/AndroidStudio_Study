@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jongman22.todolistapp.databinding.ActivityTodolist2Binding
 
@@ -32,8 +33,7 @@ class Todolist2 : AppCompatActivity() {
     fun initRecyclerView() {
 
         todoListAdapter = RecyclerViewAdapter(initTodoData(), this)
-
-        binding.mainTodolist.layoutManager = LinearLayoutManager(applicationContext)
+        binding.mainTodolist.layoutManager = GridLayoutManager(applicationContext,2)
         binding.mainTodolist.adapter = todoListAdapter
     }
 
@@ -52,7 +52,6 @@ class Todolist2 : AppCompatActivity() {
             }
         }
         cursor.close()
-
         return todoList
     }
 
@@ -61,7 +60,20 @@ class Todolist2 : AppCompatActivity() {
         val db = DBHelper(this).writableDatabase
         val titleEdit: EditText = EditText(this)
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("할 일 추가")
+        builder.apply{
+            setTitle("할 일 추가")
+            setMessage("할 일을 적으세요.")
+            setView(titleEdit)
+            setPositiveButton("확인") { _, _ ->
+                db.execSQL("insert into todolist values (\'${titleEdit.text}\')")
+                Toast.makeText(context, "Todo 생성 완료", Toast.LENGTH_LONG).show()
+                todoList.add(TodoItem(titleEdit.text.toString(), false))
+                todoListAdapter!!.notifyItemInserted(todoList.size)
+            }
+            setNegativeButton("취소") { _, _ -> }
+            show()
+        }
+       /* builder.setTitle("할 일 추가")
         builder.setMessage("할 일을 적으세요.")
         builder.setView(titleEdit)
         builder.setPositiveButton("확인") { _, _ ->
@@ -71,6 +83,6 @@ class Todolist2 : AppCompatActivity() {
             todoListAdapter!!.notifyItemInserted(todoList.size)
         }
         builder.setNegativeButton("취소") { _, _ -> }
-        builder.show()
+        builder.show()*/
     }
 }

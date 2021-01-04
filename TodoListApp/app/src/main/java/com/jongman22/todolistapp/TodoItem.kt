@@ -6,8 +6,8 @@ class TodoItem {
     var checked = false
 
     constructor(_title: String, _isCheck: Boolean){
-        title = _title
-        checked = _isCheck
+        this.title = _title
+        this.checked = _isCheck
     }
 
     fun title() : String = title

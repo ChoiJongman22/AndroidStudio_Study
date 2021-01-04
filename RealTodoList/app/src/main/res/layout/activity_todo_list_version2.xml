@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TodoList_version2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textStyle="bold"
+        android:textColor="#FF128D"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:background="@drawable/gradientbackground"
+        android:text="To-Do-List"/>
+
+    <EditText
+        android:id="@+id/edit"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:hint="Add an Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/status_bar"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/purple_200">
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="Add"
+            android:layout_marginLeft="60dp"/>
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="Delete"
+            android:layout_marginLeft="60dp"/>
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="Clear"
+            android:layout_marginLeft="60dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -27,7 +27,7 @@ class RecyclerViewAdapter(list: ArrayList<TodoItem>, _context: Context) : Recycl
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val db = DBHelper(context).writableDatabase
         holder.binding.itemTitle.text = todoList.get(position).title
-        holder.binding.itemTitle.setChecked(todoList.get(position).checked)
+        holder.binding.itemTitle.isChecked = todoList.get(position).checked
         holder.binding.itemDelete.setOnClickListener {
             db.execSQL("DELETE FROM todolist WHERE title = ('${todoList[position].title}')")
             todoList.removeAt(position)

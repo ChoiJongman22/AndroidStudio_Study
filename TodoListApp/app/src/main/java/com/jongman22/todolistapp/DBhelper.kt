@@ -18,6 +18,6 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "todo.db", null, VE
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }
