@@ -60,7 +60,7 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.5"
     implementation 'com.android.support:design:26.1.0'
     implementation 'org.jetbrains.anko:anko:0.10.5'
-
+    implementation 'com.github.tejpratap46:RecyclerCalendarAndroid:LATEST_RELEASE_TAG'
     def room_version = "2.2.5"
 
     implementation "androidx.room:room-runtime:$room_version"
