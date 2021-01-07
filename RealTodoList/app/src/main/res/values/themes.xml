@@ -14,4 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="colorControlHighlight">#fd4381</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

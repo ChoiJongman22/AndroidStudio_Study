@@ -17,6 +17,9 @@ class TodoList_version2 : AppCompatActivity() {
         binding = ActivityTodoListVersion2Binding.inflate(layoutInflater)
         val view=binding.root
         setContentView(view)
+        setSupportActionBar(binding.Toolbar)
+        binding.Toolbar.title="TodoList"
+
         var todoListAdapter:TodoAdapter= TodoAdapter(todoList,this)
         binding.recyclerView.adapter=todoListAdapter
 
@@ -81,9 +84,4 @@ class TodoList_version2 : AppCompatActivity() {
         cursor.close()
         return todoList
     }
-
-
-
-
-
 }
