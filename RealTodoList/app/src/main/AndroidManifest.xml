@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealTodoList">
-        <activity android:name=".SimpleRecyclerCalendarActivity"></activity>
-        <activity android:name=".TodoList_version2">
+        <activity android:name=".MyCalendar2"></activity>
+        <activity android:name=".MyCalendar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".TodoList_version2" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
