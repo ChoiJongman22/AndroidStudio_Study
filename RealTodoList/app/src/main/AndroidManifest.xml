@@ -18,20 +18,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealTodoList">
-
-        <activity android:name=".Gallery2.Gallery2">
+        <activity android:name=".app_lock">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PasswordFunction" />
+        <activity android:name=".Gallery2.Gallery2">
+
+        </activity>
         <activity android:name=".MainActivity2" />
-        <activity android:name=".Gallery.GalleryApp"></activity>
+        <activity android:name=".Gallery.GalleryApp" />
         <activity android:name=".MyCalendar2" />
         <activity android:name=".MyCalendar" />
         <activity android:name=".TodoList_version2" />
         <activity android:name=".MainActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

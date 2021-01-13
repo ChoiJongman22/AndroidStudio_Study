@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.FutureTarget
 import com.gun0912.tedpermission.PermissionListener
@@ -35,8 +36,9 @@ import java.util.jar.Manifest
 
 
 class Gallery2 : AppCompatActivity() {
-    private lateinit var binding:ActivityGallery2Binding
     private lateinit var viewModel: CameraViewModel
+    private lateinit var binding: ActivityGallery2Binding
+
 
     // file that store a captured image from camera
     private var imageFile: File? = null
@@ -48,12 +50,14 @@ class Gallery2 : AppCompatActivity() {
         binding = ActivityGallery2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        binding.tvCtaCamera.setOnClickListener{
+        viewModel = ViewModelProvider(viewModelStore, CameraViewModelFactory(application)).get(
+            CameraViewModel::class.java
+        )
+        binding.tvCtaCamera.setOnClickListener {
             checkCameraPermission(ImageType.CAMERA)
         }
         binding.tvCtaGallery.setOnClickListener {
-            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.Q)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
                 callGallery()
             else
                 checkCameraPermission(ImageType.GALLERY)
@@ -62,38 +66,38 @@ class Gallery2 : AppCompatActivity() {
 
     }
 
-    private fun callCamera(){
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{takePictureIntent->
-            takePictureIntent.resolveActivity(packageManager)?.also{
-                try{
-                    imageFile=viewModel.createImageFile(this)
-                    val imageUri=
-                        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N)
+    private fun callCamera() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+            takePictureIntent.resolveActivity(packageManager)?.also {
+                try {
+                    imageFile = viewModel.createImageFile(this@Gallery2)
+                    val imageUri =
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
                             FileProvider.getUriForFile(
                                 this,
-                                BuildConfig.APPLICATION_ID+".provider",
+                                BuildConfig.APPLICATION_ID + ".provider",
                                 imageFile!!
                             )
-                    else
-                        Uri.fromFile(imageFile)
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri)
-                    startActivityForResult(takePictureIntent,takePhoto)
-                }catch(e:IOException){
-                    imageFile=null
+                        else
+                            Uri.fromFile(imageFile)
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+                    startActivityForResult(takePictureIntent, takePhoto)
+                } catch (e: IOException) {
+                    imageFile = null
                     Log.e("LOG>>", "IOException while creating file : $e")
-                }catch(e:Exception){
-                    imageFile=null
-                    Log.e("LOG>>", "IOException while creating file : $e")
+                } catch (e: Exception) {
+                    imageFile = null
+                    Log.e("LOG>>", "Exception while creating file : $e")
                 }
             }
         }
     }
 
-    private fun callGallery(){
-        val intent=Intent()
-        intent.type="image/*"
-        intent.action=Intent.ACTION_GET_CONTENT
-        startActivityForResult(intent,takeGallery)
+    private fun callGallery() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, takeGallery)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -111,7 +115,7 @@ class Gallery2 : AppCompatActivity() {
                     .load(imageFile)
                     .into(binding.ivImage)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    Thread(java.lang.Runnable {
+                    Thread(Runnable {
                         val futureTarget: FutureTarget<Bitmap> = Glide.with(this)
                             .asBitmap()
                             .load(imageFile)
@@ -121,7 +125,7 @@ class Gallery2 : AppCompatActivity() {
                                 Toast.makeText(
                                     this,
                                     "Failed to save image in gallery",
-                                    android.widget.Toast.LENGTH_SHORT
+                                    Toast.LENGTH_SHORT
                                 ).show()
                             }
                         viewModel.deleteImages(imageFile!!)
@@ -133,17 +137,19 @@ class Gallery2 : AppCompatActivity() {
             takeGallery -> {
                 if (requestCode == Activity.RESULT_OK) {
                     val file = viewModel.createImageFileAndroidQ(uri = data?.data!!)
+                    Glide.with(this).load(file).into(binding.ivImage)
                 }
             }
         }
     }
-    private fun checkCameraPermission(type:ImageType){
+
+    private fun checkCameraPermission(type: ImageType) {
         TedPermission.with(this)
-            .setPermissionListener(object:PermissionListener{
+            .setPermissionListener(object : PermissionListener {
                 override fun onPermissionGranted() {
-                    when(type){
-                        ImageType.CAMERA->callCamera()
-                        ImageType.GALLERY->callGallery()
+                    when (type) {
+                        ImageType.CAMERA -> callCamera()
+                        ImageType.GALLERY -> callGallery()
                     }
                 }
 
@@ -151,16 +157,20 @@ class Gallery2 : AppCompatActivity() {
 
                 }
             })
-            .setDeniedMessage("Please allow permissions to use this app.\\uD83D\\uDE2D\\uD83D\\uDE2D")
-            .apply{
-                when(type){
-                    ImageType.CAMERA->{
-                        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.Q)
+            .setDeniedMessage("Please allow permissions to use this app.\uD83D\uDE2D\uD83D\uDE2D")
+            .apply {
+                when (type) {
+                    ImageType.CAMERA -> {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
                             setPermissions(android.Manifest.permission.CAMERA)
                         else
-                            setPermissions(android.Manifest.permission.WRITE_EXTERNAL_STORAGE,android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.CAMERA)
+                            setPermissions(
+                                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                                android.Manifest.permission.CAMERA
+                            )
                     }
-                    ImageType.GALLERY->setPermissions(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    ImageType.GALLERY -> setPermissions(android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 }
             }
             .check()
