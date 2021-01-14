@@ -1,4 +1,4 @@
-package com.jongman22.realtodolist.Gallery2
+package com.jongman22.realtodolist
 
 import android.app.Application
 import android.content.ContentResolver
@@ -12,10 +12,8 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.provider.OpenableColumns
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.jongman22.realtodolist.R
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -32,7 +30,7 @@ class CameraViewModelFactory(private val myApplication: Application) : ViewModel
 
 class CameraViewModel(
     private val myApplication: Application
-) : AndroidViewModel(myApplication) {
+) : ViewModel() {
 
     fun savePhotoAndroidQ(bitmap: Bitmap): Uri? {
         try {

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".Gallery2">
 
     <TextView
         android:id="@+id/tv_cta_camera"
@@ -44,7 +44,6 @@
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:scaleType="centerInside"
-        tools:background="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cta_gallery"

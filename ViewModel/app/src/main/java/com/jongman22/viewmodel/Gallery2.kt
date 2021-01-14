@@ -1,39 +1,26 @@
-package com.jongman22.realtodolist.Gallery2
+package com.jongman22.viewmodel
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
-import android.os.Build.VERSION_CODES.Q
-import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
-import android.text.TextUtils
-import android.util.Log
-import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.FutureTarget
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
-import com.jongman22.realtodolist.BuildConfig
-import com.jongman22.realtodolist.R
-import com.jongman22.realtodolist.databinding.ActivityGallery2Binding
+import com.jongman22.viewmodel.databinding.ActivityGallery2Binding
 import java.io.File
 import java.io.IOException
 import java.lang.Exception
 import java.util.ArrayList
-import java.util.jar.Manifest
-
 
 class Gallery2 : AppCompatActivity() {
     private lateinit var viewModel: CameraViewModel
@@ -47,9 +34,9 @@ class Gallery2 : AppCompatActivity() {
     private val takeGallery = 222
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityGallery2Binding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding= ActivityGallery2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         viewModel = ViewModelProvider(viewModelStore, CameraViewModelFactory(application)).get(
             CameraViewModel::class.java
         )

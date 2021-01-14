@@ -20,6 +20,4 @@ class MainViewModel(): ViewModel() {
     fun decrease(){
         count.value=count.value?.minus(1)
     }
-
-
 }

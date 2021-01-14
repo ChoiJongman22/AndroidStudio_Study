@@ -1,4 +1,4 @@
-package com.jongman22.realtodolist.Gallery2
+package com.jongman22.realtodolist
 
 enum class ImageType {
     CAMERA,GALLERY
