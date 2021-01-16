@@ -12,7 +12,4 @@
         android:text="전달"
         android:id="@+id/pass"/>
 
-
-
-
 </LinearLayout>

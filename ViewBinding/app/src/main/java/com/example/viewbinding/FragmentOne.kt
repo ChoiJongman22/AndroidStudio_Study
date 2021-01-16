@@ -10,11 +10,8 @@ import androidx.fragment.app.Fragment
 import com.example.viewbinding.databinding.FragmentOneBinding
 
 
-class FragmentOne:Fragment() {
-
-
-
-
+class FragmentOne:Fragment(R.layout.fragment_one) {
+    private var binding1:FragmentOneBinding?=null
     interface OnDataPassListener{
         fun onDataPass(data:String?)
     }
@@ -49,9 +46,12 @@ class FragmentOne:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d("Life-cycle","onViewCreated")
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentOneBinding.inflate(layoutInflater)
+        val binding= FragmentOneBinding.bind(view)
+        binding1=binding
         binding.pass.setOnClickListener {
+            dataPasser = context as OnDataPassListener
             dataPasser.onDataPass("good-Bye")
+            Log.d("dataa","dataatta")
         }
 
     }

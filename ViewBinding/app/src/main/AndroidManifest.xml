@@ -14,11 +14,7 @@
         android:theme="@style/Theme.ViewBinding"
         android:usesCleartextTraffic="true">
         <activity android:name=".Permission">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RetrofitLibrary">
 
@@ -36,7 +32,13 @@
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme" />
         <activity android:name=".Resource" />
-        <activity android:name=".FragmentActivity" />
+        <activity android:name=".FragmentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AsyncActivity" />
         <activity android:name=".Intent2" />
         <activity android:name=".Intent1" />
